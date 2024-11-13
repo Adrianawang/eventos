@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace: MauiAppmodel.Resources.Models"
+             x:Class="MauiAppmodel.Resources.Views.CadastroEventoPage"
+             Title="CadastroEventoPage"
+              BackgroundColor="#F5F5F5">
+
+    <ContentPage.BindingContext>
+        <local:Evento />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="15">
+        <Label Text="Cadastro de Evento" 
+               FontAttributes="Bold" 
+               FontSize="Large" 
+               TextColor="#333333" />
+      
+        <Entry Placeholder="Nome do Evento" 
+               Text="{Binding Nome}" 
+               BackgroundColor="White" 
+               TextColor="#333333" 
+               PlaceholderColor="#999999" 
+               Margin="0,10,0,0" />
+    
+        <DatePicker Date="{Binding DataInicio}" 
+                    TextColor="#333333" 
+                    BackgroundColor="White" 
+                    Margin="0,10,0,0" />
+    
+        <DatePicker Date="{Binding DataTermino}" 
+                    TextColor="#333333" 
+                    BackgroundColor="White" 
+                    Margin="0,10,0,0" />
+       
+        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Text="Número de Participantes:" 
+                   VerticalOptions="Center" 
+                   TextColor="#333333" />
+            <Stepper Minimum="1" 
+                     Maximum="1000" 
+                     Value="{Binding NumeroParticipantes}" 
+                     BackgroundColor="White" 
+                     WidthRequest="100" />
+        </StackLayout>
+
+        <Entry Placeholder="Local do Evento" 
+               Text="{Binding Local}" 
+               BackgroundColor="White" 
+               TextColor="#333333" 
+               PlaceholderColor="#999999" 
+               Margin="0,10,0,0" />
+ 
+        <Entry Placeholder="Custo por Participante" 
+               Keyboard="Numeric" 
+               Text="{Binding CustoPorParticipante}" 
+               BackgroundColor="White" 
+               TextColor="#333333" 
+               PlaceholderColor="#999999" 
+               Margin="0,10,0,0" />
+        
+        <Button Text="Cadastrar Evento" 
+                Clicked="OnCadastrarEventoClicked"
+                BackgroundColor="#4CAF50" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Margin="0,20,0,0"
+                HeightRequest="50" />
+        
+    </StackLayout>
+</ContentPage>
